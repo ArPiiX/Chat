@@ -5,14 +5,12 @@ using System.Threading.Tasks;
 using System.Windows.Forms;
 using System.Net.Http;
 using Newtonsoft.Json;
+using System.Threading;
 
 namespace chat
 {
     static class Program
     {
-        /// <summary>
-        /// The main entry point for the application.
-        /// </summary>
         [STAThread]
         static void Main()
         {
@@ -22,9 +20,12 @@ namespace chat
             Application.Run(new ChatForm(username));
         }
 
+
+        //public static Thread childThread = new Thread(new ThreadStart(CallChild.CallToChildThread));
         public static string username;
         public static string secret;
         public static string publicKey = "NU7JpQk4jfYzffNtkph5aWmYXWWY49Yj8c9cCNr7atfwRBHv7g";
+        public static string messages;
 
         public static string PostUserContent(Dictionary<string, string> dict)
         {
@@ -50,7 +51,7 @@ namespace chat
             }
         }
 
-        public static string logOut()
+        public static string LogOut()
         {
             var values = new Dictionary<string, string>
                 {
@@ -62,7 +63,11 @@ namespace chat
             string response = Program.PostUserContent(values);
 
             return response;
-            
+        }
+
+        public static void NeueLogin()
+        {
+            //Application.Run(new LoginForm());
         }
     }
 }

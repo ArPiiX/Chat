@@ -10,6 +10,7 @@ using System.Windows.Forms;
 using System.Net.Http;
 using Newtonsoft.Json;
 using System.Text.RegularExpressions;
+using System.Threading;
 
 namespace chat
 {
@@ -20,9 +21,10 @@ namespace chat
             InitializeComponent();
             this.username = name;
             lblHeader.Text = "Teilnehmer: " + username + ", " + "user2";
+            //Program.childThread.Start();
         }
 
-        private static string responseString;
+        
         private static readonly HttpClient client = new HttpClient();
         Dictionary<string, string> values = new Dictionary<string, string> { };
         private string username;
@@ -30,7 +32,13 @@ namespace chat
 
         private void btnSend_Click(object sender, EventArgs e)
         {
-            var values = new Dictionary<string, string>
+            if (txbInput.Text == "")
+            {
+               
+            }
+            else
+            {
+                var values = new Dictionary<string, string>
                 {
                     { "method", "sendmessage" },
                     { "key", publicKey },
@@ -38,26 +46,33 @@ namespace chat
                     { "usersecret", Program.secret },
                     { "message", txbInput.Text },
                 };
-            Program.PostUserContent(values);
+                Program.PostUserContent(values);
 
-            txbOutput.Text += txbInput.Text;
-            txbInput.Clear();
+                txbOutput.Text += username + ": " + txbInput.Text + "\r\n";
+                txbInput.Clear();
+            }
         }
 
         private void btnGameSelection_Click(object sender, EventArgs e)
         {
-
+            MessageBox.Show("Not Implemented!", "Notice");
         }
 
         private void btnRefresh_Click(object sender, EventArgs e)
         {
-            txbOutput.Text += responseString;
+            var values = new Dictionary<string, string>
+                    {
+                        { "method", "getmessages"   },
+                        { "key", Program.publicKey     },
+                        { "username", Program.username },
+                        { "usersecret", Program.secret }
+                    };
+            WriteMessages(Program.PostUserContent(values));
         }
 
         private void btnLogOut_Click(object sender, EventArgs e)
         {
-            Program.logOut();
-            var response = JsonConvert.DeserializeObject<Dictionary<string, string>>(Program.PostUserContent(values));
+            var response = JsonConvert.DeserializeObject<Dictionary<string, string>>(Program.LogOut());
             if (response.ContainsKey("error"))
             {
                 MessageBox.Show(response["error"]);
@@ -65,6 +80,9 @@ namespace chat
             else if (response.ContainsKey("response"))
             {
                 MessageBox.Show(response["response"]);
+                this.Hide();
+                Program.NeueLogin();
+                this.Close();
             }
         }
 
@@ -75,11 +93,32 @@ namespace chat
 
         private void Form1_FormClosing(Object sender, FormClosingEventArgs e)
         {
-            this.Hide();
-            Program.logOut();
-            this.Close();
+            //Program.childThread.Abort();
+            Program.LogOut();
+            Environment.Exit(0);
         }
 
+        private static void WriteMessages(string values)
+        {
+            var response = JsonConvert.DeserializeObject<Dictionary<string, Dictionary<string, string>>>(values);
+            ChatForm.txbOutput.Text = "";
 
+            foreach (var kvp in response)
+            {
+                var innerDict = kvp.Value;
+
+                foreach (var innerKvp in innerDict)
+                {
+                    try
+                    {
+                        ChatForm.txbOutput.Text += innerKvp.Key + " " + innerKvp.Value + "\r\n";
+                    }
+                    catch (Exception exx)
+                    {
+                        Console.WriteLine(exx.ToString());
+                    }
+                }
+            }
+        }
     }
 }

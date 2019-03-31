@@ -1,0 +1,14 @@
+C:\Users\Simon\Source\Repos\ArPiiX\Chat\chat\chat\obj\Release\chat.ChatForm.resources
+C:\Users\Simon\Source\Repos\ArPiiX\Chat\chat\chat\obj\Release\chat.LoginForm.resources
+C:\Users\Simon\Source\Repos\ArPiiX\Chat\chat\chat\obj\Release\chat.Properties.Resources.resources
+C:\Users\Simon\Source\Repos\ArPiiX\Chat\chat\chat\obj\Release\chat.csproj.GenerateResource.cache
+C:\Users\Simon\Source\Repos\ArPiiX\Chat\chat\chat\obj\Release\chat.csproj.CoreCompileInputs.cache
+C:\Users\Simon\Source\Repos\ArPiiX\Chat\chat\chat\bin\Release\chat.exe.config
+C:\Users\Simon\Source\Repos\ArPiiX\Chat\chat\chat\bin\Release\chat.exe
+C:\Users\Simon\Source\Repos\ArPiiX\Chat\chat\chat\bin\Release\chat.pdb
+C:\Users\Simon\Source\Repos\ArPiiX\Chat\chat\chat\bin\Release\Newtonsoft.Json.dll
+C:\Users\Simon\Source\Repos\ArPiiX\Chat\chat\chat\bin\Release\Newtonsoft.Json.pdb
+C:\Users\Simon\Source\Repos\ArPiiX\Chat\chat\chat\bin\Release\Newtonsoft.Json.xml
+C:\Users\Simon\Source\Repos\ArPiiX\Chat\chat\chat\obj\Release\chat.csproj.CopyComplete
+C:\Users\Simon\Source\Repos\ArPiiX\Chat\chat\chat\obj\Release\chat.exe
+C:\Users\Simon\Source\Repos\ArPiiX\Chat\chat\chat\obj\Release\chat.pdb

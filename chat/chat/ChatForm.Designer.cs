@@ -30,7 +30,7 @@
         {
             this.btnSend = new System.Windows.Forms.Button();
             this.btnQuit = new System.Windows.Forms.Button();
-            this.txbOutput = new System.Windows.Forms.TextBox();
+            txbOutput = new System.Windows.Forms.TextBox();
             this.lblHeader = new System.Windows.Forms.Label();
             this.txbInput = new System.Windows.Forms.TextBox();
             this.btnRefresh = new System.Windows.Forms.Button();
@@ -62,12 +62,13 @@
             // 
             // txbOutput
             // 
-            this.txbOutput.Location = new System.Drawing.Point(12, 25);
-            this.txbOutput.Multiline = true;
-            this.txbOutput.Name = "txbOutput";
-            this.txbOutput.ReadOnly = true;
-            this.txbOutput.Size = new System.Drawing.Size(518, 455);
-            this.txbOutput.TabIndex = 2;
+            txbOutput.Location = new System.Drawing.Point(12, 25);
+            txbOutput.Multiline = true;
+            txbOutput.Name = "txbOutput";
+            txbOutput.ReadOnly = true;
+            txbOutput.ScrollBars = System.Windows.Forms.ScrollBars.Vertical;
+            txbOutput.Size = new System.Drawing.Size(518, 455);
+            txbOutput.TabIndex = 2;
             // 
             // lblHeader
             // 
@@ -129,7 +130,7 @@
             this.Controls.Add(this.btnRefresh);
             this.Controls.Add(this.txbInput);
             this.Controls.Add(this.lblHeader);
-            this.Controls.Add(this.txbOutput);
+            this.Controls.Add(txbOutput);
             this.Controls.Add(this.btnQuit);
             this.Controls.Add(this.btnSend);
             this.Name = "ChatForm";
@@ -144,12 +145,12 @@
 
         private System.Windows.Forms.Button btnSend;
         private System.Windows.Forms.Button btnQuit;
-        private System.Windows.Forms.TextBox txbOutput;
         private System.Windows.Forms.Label lblHeader;
         private System.Windows.Forms.TextBox txbInput;
         private System.Windows.Forms.Button btnRefresh;
         private System.Windows.Forms.Button btnLogOut;
         private System.Windows.Forms.Button btnGameSelection;
+        public static System.Windows.Forms.TextBox txbOutput;
     }
 }
 

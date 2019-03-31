@@ -79,10 +79,7 @@ namespace chat
 
         private void Form1_FormClosing(Object sender, FormClosingEventArgs e)
         {
-            if(Program.username == "")
-            {
-                
-            }
+            
         }
     }
 }
