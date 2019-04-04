@@ -51,6 +51,7 @@ namespace chat
                             }
                             else
                             {
+                                Program.neededForm = "chat";
                                 Program.secret = response["secret"];
                                 this.Close();
                             }
@@ -79,7 +80,12 @@ namespace chat
 
         private void Form1_FormClosing(Object sender, FormClosingEventArgs e)
         {
-            
+        }
+
+        private void btnQuit_Click(object sender, EventArgs e)
+        {
+            Program.neededForm = "logOut";
+            Environment.Exit(0);
         }
     }
 }

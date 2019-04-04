@@ -16,12 +16,20 @@ namespace chat
         {
             Application.EnableVisualStyles();
             Application.SetCompatibleTextRenderingDefault(false);
-            Application.Run(new LoginForm());
-            Application.Run(new ChatForm(username));
+            while (neededForm != "logOut")
+            {
+                if (neededForm == "")
+                {
+                    Application.Run(new LoginForm());
+                }
+                else if(neededForm == "chat")
+                {
+                    Application.Run(new ChatForm(username));
+                }
+            }
         }
 
-
-        //public static Thread childThread = new Thread(new ThreadStart(CallChild.CallToChildThread));
+        public static string neededForm = "";
         public static string username;
         public static string secret;
         public static string publicKey = "NU7JpQk4jfYzffNtkph5aWmYXWWY49Yj8c9cCNr7atfwRBHv7g";
@@ -63,11 +71,6 @@ namespace chat
             string response = Program.PostUserContent(values);
 
             return response;
-        }
-
-        public static void NeueLogin()
-        {
-            //Application.Run(new LoginForm());
         }
     }
 }

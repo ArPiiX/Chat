@@ -56,6 +56,7 @@
     <Compile Include="ChatForm.Designer.cs">
       <DependentUpon>ChatForm.cs</DependentUpon>
     </Compile>
+    <Compile Include="FetchMessages.cs" />
     <Compile Include="JsonHandler.cs" />
     <Compile Include="LoginForm.cs">
       <SubType>Form</SubType>

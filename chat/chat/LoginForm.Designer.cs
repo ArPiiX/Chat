@@ -31,6 +31,7 @@
             this.txbInput = new System.Windows.Forms.TextBox();
             this.lblName = new System.Windows.Forms.Label();
             this.btnConfirm = new System.Windows.Forms.Button();
+            this.btnQuit = new System.Windows.Forms.Button();
             this.SuspendLayout();
             // 
             // txbInput
@@ -60,12 +61,24 @@
             this.btnConfirm.UseVisualStyleBackColor = true;
             this.btnConfirm.Click += new System.EventHandler(this.btnConfirm_Click);
             // 
+            // btnQuit
+            // 
+            this.btnQuit.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F);
+            this.btnQuit.Location = new System.Drawing.Point(157, 183);
+            this.btnQuit.Name = "btnQuit";
+            this.btnQuit.Size = new System.Drawing.Size(141, 31);
+            this.btnQuit.TabIndex = 3;
+            this.btnQuit.Text = "Ende";
+            this.btnQuit.UseVisualStyleBackColor = true;
+            this.btnQuit.Click += new System.EventHandler(this.btnQuit_Click);
+            // 
             // LoginForm
             // 
             this.AcceptButton = this.btnConfirm;
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(457, 302);
+            this.Controls.Add(this.btnQuit);
             this.Controls.Add(this.btnConfirm);
             this.Controls.Add(this.lblName);
             this.Controls.Add(this.txbInput);
@@ -82,5 +95,6 @@
         private System.Windows.Forms.TextBox txbInput;
         private System.Windows.Forms.Label lblName;
         private System.Windows.Forms.Button btnConfirm;
+        private System.Windows.Forms.Button btnQuit;
     }
 }

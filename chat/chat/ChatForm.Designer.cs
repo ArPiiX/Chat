@@ -30,12 +30,12 @@
         {
             this.btnSend = new System.Windows.Forms.Button();
             this.btnQuit = new System.Windows.Forms.Button();
-            txbOutput = new System.Windows.Forms.TextBox();
-            this.lblHeader = new System.Windows.Forms.Label();
+            lblHeader = new System.Windows.Forms.Label();
             this.txbInput = new System.Windows.Forms.TextBox();
             this.btnRefresh = new System.Windows.Forms.Button();
             this.btnLogOut = new System.Windows.Forms.Button();
             this.btnGameSelection = new System.Windows.Forms.Button();
+            txbOutput = new System.Windows.Forms.RichTextBox();
             this.SuspendLayout();
             // 
             // btnSend
@@ -60,23 +60,13 @@
             this.btnQuit.UseVisualStyleBackColor = true;
             this.btnQuit.Click += new System.EventHandler(this.btnQuit_Click);
             // 
-            // txbOutput
-            // 
-            txbOutput.Location = new System.Drawing.Point(12, 25);
-            txbOutput.Multiline = true;
-            txbOutput.Name = "txbOutput";
-            txbOutput.ReadOnly = true;
-            txbOutput.ScrollBars = System.Windows.Forms.ScrollBars.Vertical;
-            txbOutput.Size = new System.Drawing.Size(518, 455);
-            txbOutput.TabIndex = 2;
-            // 
             // lblHeader
             // 
-            this.lblHeader.AutoSize = true;
-            this.lblHeader.Location = new System.Drawing.Point(12, 9);
-            this.lblHeader.Name = "lblHeader";
-            this.lblHeader.Size = new System.Drawing.Size(0, 13);
-            this.lblHeader.TabIndex = 3;
+            lblHeader.AutoSize = true;
+            lblHeader.Location = new System.Drawing.Point(12, 9);
+            lblHeader.Name = "lblHeader";
+            lblHeader.Size = new System.Drawing.Size(0, 13);
+            lblHeader.TabIndex = 3;
             // 
             // txbInput
             // 
@@ -119,23 +109,35 @@
             this.btnGameSelection.UseVisualStyleBackColor = true;
             this.btnGameSelection.Click += new System.EventHandler(this.btnGameSelection_Click);
             // 
+            // txbOutput
+            // 
+            txbOutput.Enabled = false;
+            txbOutput.ForeColor = System.Drawing.Color.Black;
+            txbOutput.Location = new System.Drawing.Point(12, 25);
+            txbOutput.Name = "txbOutput";
+            txbOutput.ScrollBars = System.Windows.Forms.RichTextBoxScrollBars.Vertical;
+            txbOutput.Size = new System.Drawing.Size(518, 455);
+            txbOutput.TabIndex = 8;
+            txbOutput.Text = "";
+            txbOutput.TextChanged += new System.EventHandler(txbOutput_TextChanged);
+            // 
             // ChatForm
             // 
             this.AcceptButton = this.btnSend;
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(619, 600);
+            this.Controls.Add(txbOutput);
             this.Controls.Add(this.btnGameSelection);
             this.Controls.Add(this.btnLogOut);
             this.Controls.Add(this.btnRefresh);
             this.Controls.Add(this.txbInput);
-            this.Controls.Add(this.lblHeader);
-            this.Controls.Add(txbOutput);
+            this.Controls.Add(lblHeader);
             this.Controls.Add(this.btnQuit);
             this.Controls.Add(this.btnSend);
             this.Name = "ChatForm";
             this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
-            this.Text = "Form1";
+            this.Text = "BOSCH ChatRoom";
             this.ResumeLayout(false);
             this.PerformLayout();
 
@@ -145,12 +147,12 @@
 
         private System.Windows.Forms.Button btnSend;
         private System.Windows.Forms.Button btnQuit;
-        private System.Windows.Forms.Label lblHeader;
         private System.Windows.Forms.TextBox txbInput;
         private System.Windows.Forms.Button btnRefresh;
         private System.Windows.Forms.Button btnLogOut;
         private System.Windows.Forms.Button btnGameSelection;
-        public static System.Windows.Forms.TextBox txbOutput;
+        public static System.Windows.Forms.Label lblHeader;
+        public static System.Windows.Forms.RichTextBox txbOutput;
     }
 }
 

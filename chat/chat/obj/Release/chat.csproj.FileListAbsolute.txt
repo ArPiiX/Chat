@@ -12,3 +12,4 @@ C:\Users\Simon\Source\Repos\ArPiiX\Chat\chat\chat\bin\Release\Newtonsoft.Json.xm
 C:\Users\Simon\Source\Repos\ArPiiX\Chat\chat\chat\obj\Release\chat.csproj.CopyComplete
 C:\Users\Simon\Source\Repos\ArPiiX\Chat\chat\chat\obj\Release\chat.exe
 C:\Users\Simon\Source\Repos\ArPiiX\Chat\chat\chat\obj\Release\chat.pdb
+C:\Users\Simon\Source\Repos\ArPiiX\Chat\chat\chat\obj\Release\chat.csprojAssemblyReference.cache
