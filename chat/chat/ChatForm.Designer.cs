@@ -63,7 +63,7 @@
             // lblHeader
             // 
             lblHeader.AutoSize = true;
-            lblHeader.Location = new System.Drawing.Point(12, 9);
+            lblHeader.Location = new System.Drawing.Point(536, 76);
             lblHeader.Name = "lblHeader";
             lblHeader.Size = new System.Drawing.Size(0, 13);
             lblHeader.TabIndex = 3;
@@ -111,15 +111,15 @@
             // 
             // txbOutput
             // 
-            txbOutput.Enabled = false;
             txbOutput.ForeColor = System.Drawing.Color.Black;
             txbOutput.Location = new System.Drawing.Point(12, 25);
             txbOutput.Name = "txbOutput";
+            txbOutput.ReadOnly = true;
             txbOutput.ScrollBars = System.Windows.Forms.RichTextBoxScrollBars.Vertical;
             txbOutput.Size = new System.Drawing.Size(518, 455);
             txbOutput.TabIndex = 8;
             txbOutput.Text = "";
-            txbOutput.TextChanged += new System.EventHandler(txbOutput_TextChanged);
+            txbOutput.TextChanged += new System.EventHandler(this.txbOutput_TextChanged);
             // 
             // ChatForm
             // 
