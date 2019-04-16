@@ -12,7 +12,7 @@ namespace chat
         public string Post(Uri url, string value)
         {
             var request = HttpWebRequest.Create(url);
-            var byteData = Encoding.ASCII.GetBytes(value);
+            var byteData = Encoding.UTF8.GetBytes(value);
             request.ContentType = "application/json";
             request.Method = "POST";
 
