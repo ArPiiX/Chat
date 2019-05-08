@@ -29,8 +29,6 @@ namespace chat
 
                 Uri url = new Uri("http://109.192.39.111:1337/chat");
 
-                Console.WriteLine(request);
-
                 string response = jsonHandler.Post(url, request);
 
                 ChatForm.openChatForm.AddText(response);

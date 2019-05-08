@@ -26,23 +26,27 @@ namespace chat
                 {
                     Application.Run(new ChatForm(username));
                 }
+                else if(neededForm == "vvs")
+                {
+                    Application.Run(new EFAForm());
+                }
             }
         }
 
         public static string neededForm = "";
         public static string username;
+        public static string before = "";
         public static string secret;
         public static string publicKey = "NU7JpQk4jfYzffNtkph5aWmYXWWY49Yj8c9cCNr7atfwRBHv7g";
         public static string messages;
 
-        public static string PostUserContent(Dictionary<string, string> dict)
+        public static string PostUserContent(Dictionary<string, string> dict, string com)
         {
             JsonHandler jsonHandler = new JsonHandler();
 
             string request = JsonConvert.SerializeObject(dict);
-
-            Uri url = new Uri("http://109.192.39.111:1337/chat");
-
+            string requrl = "http://109.192.39.111:1337/" + com;
+            Uri url = new Uri(requrl);
             Console.WriteLine(request);
 
             string response = jsonHandler.Post(url, request);
@@ -68,7 +72,7 @@ namespace chat
                     { "username", username },
                     { "usersecret", secret }
                 };
-            string response = Program.PostUserContent(values);
+            string response = Program.PostUserContent(values, "chat");
 
             return response;
         }

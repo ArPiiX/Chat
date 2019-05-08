@@ -49,12 +49,17 @@
     <Reference Include="System.Xml" />
   </ItemGroup>
   <ItemGroup>
-    <Compile Include="CallChild.cs" />
     <Compile Include="ChatForm.cs">
       <SubType>Form</SubType>
     </Compile>
     <Compile Include="ChatForm.Designer.cs">
       <DependentUpon>ChatForm.cs</DependentUpon>
+    </Compile>
+    <Compile Include="EFAForm.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="EFAForm.Designer.cs">
+      <DependentUpon>EFAForm.cs</DependentUpon>
     </Compile>
     <Compile Include="FetchMessages.cs" />
     <Compile Include="JsonHandler.cs" />
@@ -68,6 +73,9 @@
     <Compile Include="Properties\AssemblyInfo.cs" />
     <EmbeddedResource Include="ChatForm.resx">
       <DependentUpon>ChatForm.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="EFAForm.resx">
+      <DependentUpon>EFAForm.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="LoginForm.resx">
       <DependentUpon>LoginForm.cs</DependentUpon>

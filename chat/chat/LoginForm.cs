@@ -42,8 +42,8 @@ namespace chat
                                     { "username", txbInput.Text }
                                 };
                             Program.username = txbInput.Text;
-
-                            var response = JsonConvert.DeserializeObject<Dictionary<string, string>>(Program.PostUserContent(values));
+                            
+                            var response = JsonConvert.DeserializeObject<Dictionary<string, string>>(Program.PostUserContent(values, "chat"));
 
                             if (response.ContainsKey("error"))
                             {

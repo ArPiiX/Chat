@@ -35,7 +35,8 @@
             this.btnRefresh = new System.Windows.Forms.Button();
             this.btnLogOut = new System.Windows.Forms.Button();
             this.btnGameSelection = new System.Windows.Forms.Button();
-            txbOutput = new System.Windows.Forms.RichTextBox();
+            this.txbOutput = new System.Windows.Forms.RichTextBox();
+            this.btnVVS = new System.Windows.Forms.Button();
             this.SuspendLayout();
             // 
             // btnSend
@@ -111,15 +112,26 @@
             // 
             // txbOutput
             // 
-            txbOutput.ForeColor = System.Drawing.Color.Black;
-            txbOutput.Location = new System.Drawing.Point(12, 25);
-            txbOutput.Name = "txbOutput";
-            txbOutput.ReadOnly = true;
-            txbOutput.ScrollBars = System.Windows.Forms.RichTextBoxScrollBars.Vertical;
-            txbOutput.Size = new System.Drawing.Size(518, 455);
-            txbOutput.TabIndex = 8;
-            txbOutput.Text = "";
-            txbOutput.TextChanged += new System.EventHandler(this.txbOutput_TextChanged);
+            this.txbOutput.ForeColor = System.Drawing.Color.Black;
+            this.txbOutput.Location = new System.Drawing.Point(12, 25);
+            this.txbOutput.Name = "txbOutput";
+            this.txbOutput.ReadOnly = true;
+            this.txbOutput.ScrollBars = System.Windows.Forms.RichTextBoxScrollBars.Vertical;
+            this.txbOutput.Size = new System.Drawing.Size(518, 455);
+            this.txbOutput.TabIndex = 8;
+            this.txbOutput.Text = "";
+            this.txbOutput.TextChanged += new System.EventHandler(this.txbOutput_TextChanged);
+            // 
+            // btnVVS
+            // 
+            this.btnVVS.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F);
+            this.btnVVS.Location = new System.Drawing.Point(536, 378);
+            this.btnVVS.Name = "btnVVS";
+            this.btnVVS.Size = new System.Drawing.Size(71, 48);
+            this.btnVVS.TabIndex = 9;
+            this.btnVVS.Text = "VVS EFA";
+            this.btnVVS.UseVisualStyleBackColor = true;
+            this.btnVVS.Click += new System.EventHandler(this.btnVVS_Click);
             // 
             // ChatForm
             // 
@@ -127,7 +139,8 @@
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(619, 600);
-            this.Controls.Add(txbOutput);
+            this.Controls.Add(this.btnVVS);
+            this.Controls.Add(this.txbOutput);
             this.Controls.Add(this.btnGameSelection);
             this.Controls.Add(this.btnLogOut);
             this.Controls.Add(this.btnRefresh);
@@ -151,8 +164,9 @@
         private System.Windows.Forms.Button btnRefresh;
         private System.Windows.Forms.Button btnLogOut;
         private System.Windows.Forms.Button btnGameSelection;
+        private System.Windows.Forms.Button btnVVS;
         public static System.Windows.Forms.Label lblHeader;
-        public static System.Windows.Forms.RichTextBox txbOutput;
+        public System.Windows.Forms.RichTextBox txbOutput;
     }
 }
 
